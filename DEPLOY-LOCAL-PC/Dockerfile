@@ -1,11 +1,11 @@
-FROM my-app:latest AS front-end
-WORKDIR /usr/src/app/my-app
+FROM example-application1-vue:latest AS example-application1-vue
+WORKDIR /usr/src/app/example-application1-vue
 RUN npm run build
 
-FROM api:latest AS back-end
-WORKDIR /usr/src/app/api
+FROM example-application1-api:latest AS example-application1-api
+WORKDIR /usr/src/app/example-application1-api
 
-COPY --from=front-end /usr/src/app/my-app/dist ../my-app/dist/
+COPY --from=example-application1-vue /usr/src/app/example-application1-vue/dist ../example-application1-vue/dist/
 
 EXPOSE 3080
 

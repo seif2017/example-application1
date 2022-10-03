@@ -1,28 +1,28 @@
 version: '3'
 services:
 
-  nodejs-server:
+  example-application1-api:
     build:
-      context: ./api
+      context: ./example-application1-api
       dockerfile: Dockerfile-dev
     ports:
       - "3080:3080"
-    container_name: node-api
+    container_name: example-application1-api
     volumes:
-       - ./api:/usr/src/app/api
-       - /usr/src/app/api/node_modules
+       - ./example-application1-api:/usr/src/app/example-application1-api
+       - /usr/src/app/example-application1-api/node_modules
     environment: 
       - CHOKIDAR_USEPOLLING=true # <---- this enables the hot reloading
       
-  vue-ui:
+  example-application1-vue:
     build:
-      context: ./my-app
+      context: ./example-application1-vue
       dockerfile: Dockerfile-dev
     ports:
       - "8080:8080"
-    container_name: vue-ui
+    container_name: example-application1-vue
     volumes:
-       - ./my-app:/usr/src/app/my-app
-       - /usr/src/app/my-app/node_modules
+       - ./example-application1-vue:/usr/src/app/example-application1-vue
+       - /usr/src/app/example-application1-vue/node_modules
     environment: 
       - CHOKIDAR_USEPOLLING=true # <---- this enables the hot reloading

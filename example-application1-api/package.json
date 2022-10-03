@@ -1,5 +1,5 @@
 {
-  "name": "api",
+  "name": "example-application1-api",
   "version": "1.0.0",
   "description": "example project react with nodejs",
   "main": "server.js",

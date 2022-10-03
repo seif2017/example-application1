@@ -1,6 +1,6 @@
 FROM node:14.17-alpine
 
-WORKDIR /usr/src/app/my-app
+WORKDIR /usr/src/app/example-application1-vue
 
 COPY package*.json ./
 

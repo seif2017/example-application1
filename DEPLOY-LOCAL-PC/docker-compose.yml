@@ -4,6 +4,7 @@ services:
   example-application1:
     build:
       context: .
+    container_name: example-application1
     ports:
       - "3080:3080"
 

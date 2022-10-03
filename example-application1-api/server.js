@@ -11,7 +11,7 @@ require("dotenv").config();
 const users = [];
 
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, "../my-app/dist")));
+app.use(express.static(path.join(__dirname, "../example-application1-vue/dist")));
 
 app.get("/api/users", (req, res) => {
   console.log("api/users called!!!7777!!!!");
@@ -60,7 +60,7 @@ app.get("/api/getEnv", (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../my-app/build/index.html"));
+  res.sendFile(path.join(__dirname, "../example-application1-vue/build/index.html"));
   console.log("landing page");
 });
 
