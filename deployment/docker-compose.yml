@@ -1,0 +1,10 @@
+version: '3'
+services:
+
+  example-application1:
+    build:
+      context: .
+    ports:
+      - "3080:3080"
+
+      
