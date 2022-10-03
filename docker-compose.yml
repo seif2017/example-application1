@@ -1,6 +1,27 @@
 version: '3'
 services:
 
+  mssql:
+    image: mcr.microsoft.com/mssql/server
+    hostname: mssql
+    container_name: mssql
+    restart: always
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=p@ssw0rd
+    volumes:
+      - ./mssql-data:/var/lib/mssqlql/data    
+    ports:
+      - "1433:1433"
+
+  adminer:
+    image: adminer
+    container_name: adminer
+    restart: always
+    ports:
+      - 6060:8080
+
+
   example-application1-api:
     build:
       context: ./example-application1-api
@@ -26,3 +47,8 @@ services:
        - /usr/src/app/example-application1-vue/node_modules
     environment: 
       - CHOKIDAR_USEPOLLING=true # <---- this enables the hot reloading
+
+networks:
+  default:
+    external:
+      name: we-settle
