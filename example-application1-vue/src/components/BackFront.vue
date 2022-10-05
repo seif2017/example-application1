@@ -7,7 +7,7 @@
       <br />
       Frontend time : {{ fronendDate }} <br />
       Backend time : {{ backendDate }}<br />
-      <br/>
+      <br/>API CALL:<br/>
       {{ answer }}
     </div>
   </div>
@@ -17,7 +17,7 @@
 import { getDate, getEnv } from "../services/UserService";
 
 export default {
-  name: "DateEnc",
+  name: "BackFront",
 
   data() {
     return {
