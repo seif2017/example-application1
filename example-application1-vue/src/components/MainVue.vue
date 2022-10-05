@@ -30,7 +30,7 @@ import BackFront from './BackFront.vue'
 import { getAllUsers, createUser } from '../services/UserService'
 
 export default {
-  name: 'Main',
+  name: 'MainVue',
   components: {
     Header,
     CreateUser,

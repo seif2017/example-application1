@@ -8,12 +8,12 @@
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-import Main from './components/Main.vue'
+import MainVue from './components/MainVue.vue'
 
 export default {
   name: 'App',
   components: {
-    Main
+    MainVue
   }
 }
 </script>
