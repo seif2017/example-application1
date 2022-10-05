@@ -7,15 +7,16 @@
 * add swagger-ui
 * add BDD SQL Server
 * add timer refresh
+* add git flow readme (developper & tech leader)
+* hotfix swagger-ui  (cors)
 
 ## TODO:
-* add git flow readme (developper & tech leader)
 * add router-controller-service to backend
 * add BDD table
+* add modal
 * add backend log
 * remove frontend log (production)
 * add CHANGELOG
-* hotfix swagger-ui  
 * add bearer token
 * add frontend controls
 * add backend controls (params & business)

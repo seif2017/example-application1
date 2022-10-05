@@ -30,6 +30,7 @@ services:
       # - BASE_URL=/docs
       - BASE_URL=/
       - SWAGGER_JSON=/apis/api-doc.yml
+      - ENABLE_CORS=true
     volumes:
       - ./swagger-ui/:/apis
     ports:
@@ -39,6 +40,8 @@ services:
     build:
       context: ./example-application1-api
       dockerfile: Dockerfile-dev
+    hostname: api
+
     ports:
       - "3080:3080"
     container_name: example-application1-api

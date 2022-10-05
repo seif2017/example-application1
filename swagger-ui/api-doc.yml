@@ -3,19 +3,18 @@ info:
   title: Documentation backend example-application1
   description: >-
     All operations are access protected by a bearer token.
-  version: 2.0.0
+  version: 1.0.0
 servers:
-  - url: http://127.0.0.1:3080/api
+  - url: http://localhost:3080/api
+
+  
 tags:
   - name: main-api
-    description: Some useful tools available only in sandbox environment
+    
 paths:
   /users:
     get:
-      tags:
-        - main-api
       summary: gets all users
-      operationId: get_users
       responses:
         "200":
           description: Successful operation
@@ -28,9 +27,27 @@ paths:
                     type: string
                 required:
                   - message
-              example:
-                message: Success resetting database
-      x-swagger-router-controller: main-api
+  /getDate:
+    get:
+      summary: gets server date
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/text:
+              schema:
+                type: string
+
+  /getEnv:
+    get:
+      summary: gets server env
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/text:
+              schema:
+                type: string
 
    
 
