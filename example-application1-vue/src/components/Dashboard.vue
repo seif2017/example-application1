@@ -6,7 +6,7 @@
             <div class="col-md-6">
                 <CreateUser @createUser="userCreate($event)" />
             </div>
-            <div class="col-md-3">
+            <div class="col-md-5">
                 <DateEnc  />
             </div>
             <div class="col-md-3">

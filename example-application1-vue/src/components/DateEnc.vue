@@ -1,12 +1,14 @@
 <template>
   <div class="display-board">
-    <h4>Date Encaissement</h4>
+    <h4>Tests FRONT/BACK (refresh 5 sec)</h4>
     <div>
-      VUE_APP_AAA : {{ env }} <br />
-      ENV NODE JS : {{ env_node }} <br />
+      Frontend ENV (VUE_APP_AAA) : {{ frontendEnv }} <br />
+      Backend ENV (XXX) : {{ backendEnv }} <br />
       <br />
-      Browser time : <br />{{ datenc }} <br />
-      Server time : <br />{{ datenc2 }}
+      Frontend time : {{ fronendDate }} <br />
+      Backend time : {{ backendDate }}<br />
+      <br/>
+      {{ answer }}
     </div>
   </div>
 </template>
@@ -18,42 +20,72 @@ export default {
   name: "DateEnc",
 
   data() {
-    // console.log(process.env.TZ)
-    // process.env.TZ = 'Africa/Tunis';
-    // console.log(process.env.TZ)
-
-    const dt = new Date(); // ==> donne UTC   si TZ est vide
-    console.log(dt);
-    const datenc =
-      dt.toLocaleDateString("fr", {
-        month: "2-digit",
-        day: "2-digit",
-        year: "numeric",
-      }) +
-      " " +
-      dt.toLocaleTimeString("fr", {
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-      });
-    console.log(datenc);
-
-    const datenc2 = getDate().then((response) => {
-      console.log(response);
-      this.datenc2 = response;
-    });
-
-    const env_node = getEnv().then((response) => {
-      console.log(response);
-      this.env_node = response;
-    });
-
     return {
-      datenc: datenc,
-      datenc2: datenc2,
-      env: process.env.VUE_APP_AAA,
-      env_node: env_node,
+      frontendEnv: "",
+      backendEnv: "",
+      fronendDate: "",
+      backendDate: "",
+      answer: {},
+      timer: "",
     };
+  },
+  created() {
+    this.refresh();
+    this.timer = setInterval(this.refresh, 5000);
+  },
+  beforeDestroy() {
+    clearInterval(this.timer);
+  },
+  methods: {
+    async refresh() {
+      this.getFrontendEnv();
+      this.getBackendEnv();
+      this.getFrontendDate();
+      this.getBackendDate();
+      this.fetchData();
+    },
+    async fetchData() {
+      const res = await fetch("https://yesno.wtf/api");
+      const data = await res.json();
+      this.answer = data;
+    },
+    async getBackendEnv() {
+      await getEnv().then((response) => {
+        console.log(response);
+        this.backendEnv = response;
+      });
+    },
+    getFrontendEnv() {
+      this.frontendEnv = process.env.VUE_APP_AAA;
+    },
+    async getBackendDate() {
+      await getDate().then((response) => {
+        console.log(response);
+        this.backendDate = response;
+      });
+    },
+    getFrontendDate() {
+      // console.log(process.env.TZ)
+      // process.env.TZ = 'Africa/Tunis';
+      // console.log(process.env.TZ)
+
+      const dt = new Date(); // ==> donne UTC   si TZ est vide
+      console.log(dt);
+      const datenc =
+        dt.toLocaleDateString("fr", {
+          month: "2-digit",
+          day: "2-digit",
+          year: "numeric",
+        }) +
+        " " +
+        dt.toLocaleTimeString("fr", {
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+        });
+      console.log(datenc);
+      this.fronendDate = datenc;
+    },
   },
 };
 </script>

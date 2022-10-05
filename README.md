@@ -3,12 +3,12 @@
 
 ## TODO:
 * add MVC to backend
+* add backend log
 * add BDD SQL Server
-* add swagger-ui  ==> /docs
+* hotfix swagger-ui  
 * add token
 * add ui control
 * add business control
-* add log
 * add pipeline CI/CD
 * ...
 
