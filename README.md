@@ -14,7 +14,7 @@
 * add router-controller-service to backend
 * add BDD table
 * add modal
-* add backend log
+* add backend log (centralized)
 * remove frontend log (production)
 * add CHANGELOG
 * add bearer token
