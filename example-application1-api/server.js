@@ -25,9 +25,9 @@ app.get("/api/users", (req, res) => {
   res.json(users);
 });
 
-app.post("/api/user", (req, res) => {
+app.post("/api/users", (req, res) => {
   const user = req.body.user;
-  user.id = randomId(10);
+  //user.id = randomId(10);
   // user.email = "a@a.com";
   console.log("Adding user hhhhh", user);
 
