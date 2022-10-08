@@ -1,0 +1,90 @@
+openapi: 3.0.1
+info:
+  title: Documentation backend example-application1
+  description: >-
+    All operations are access protected by a bearer token.
+  version: 1.0.0
+servers:
+  - url: http://localhost:3080/api
+
+  
+tags:
+  - name: main-api
+    
+paths:
+  /users:
+    get:
+      summary: gets all users
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                required:
+                  - message
+
+    post:
+      summary: add user
+      requestBody:
+        description: Create a new user 
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User' 
+
+  /getDate:
+    get:
+      summary: gets server date
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/text:
+              schema:
+                type: string
+
+  /getEnv:
+    get:
+      summary: gets server env
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/text:
+              schema:
+                type: string
+
+
+
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+          example: 22
+        firstname:
+          type: string
+          example: aaa
+        lastname:
+          type: string
+          example: aaa
+        email:
+          type: string
+          example: aaa
+
+
