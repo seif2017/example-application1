@@ -7,6 +7,9 @@ port = 3080;
 
 require("dotenv").config();
 
+const models = require("./models");
+
+
 // place holder for the data
 const users = [];
 
@@ -14,22 +17,24 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "../example-application1-vue/dist")));
 
 // enable CORS without external module
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
+// app.use(function (req, res, next) {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//   next();
+// });
 
 app.get("/api/users", (req, res) => {
   console.log("api/users called!!!7777!!!!");
   res.json(users);
 });
 
-app.post("/api/user", (req, res) => {
+app.post("/api/users", (req, res) => {
   const user = req.body.user;
   user.id = randomId(10);
   // user.email = "a@a.com";
   console.log("Adding user hhhhh", user);
+
+  models.User.create(user);
 
   users.push(user);
   res.json("user addedd");
