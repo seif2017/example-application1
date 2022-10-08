@@ -7,7 +7,7 @@ port = 3080;
 
 require("dotenv").config();
 
-const models = require("./models");
+const models = require("./models/models");
 
 
 // place holder for the data
