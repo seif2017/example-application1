@@ -5,16 +5,19 @@ const app = express(),
   bodyParser = require("body-parser");
 port = 3080;
 
+process.env.TZ = "Africa/Tunis";
+
 require("dotenv").config();
 
 const models = require("./models/models");
-
 
 // place holder for the data
 const users = [];
 
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, "../example-application1-vue/dist")));
+app.use(
+  express.static(path.join(__dirname, "../example-application1-vue/dist"))
+);
 
 // enable CORS without external module
 // app.use(function (req, res, next) {
@@ -72,7 +75,9 @@ app.get("/api/getEnv", (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../example-application1-vue/build/index.html"));
+  res.sendFile(
+    path.join(__dirname, "../example-application1-vue/build/index.html")
+  );
   console.log("landing page");
 });
 

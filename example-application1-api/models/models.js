@@ -5,17 +5,26 @@ const db = new Sequelize("db_test", "sa", "p@ssw0rd", {
   dialect: "mssql",
   timezone: "Africa/Tunis",
 });
- 
+
 const User = db.define("user", {
   id: { type: Sequelize.STRING, primaryKey: true },
   firstName: { type: Sequelize.STRING },
-  lastName: { type: Sequelize.STRING },  
-  email: { type: Sequelize.STRING },  
-  birthDate : {type: Sequelize.DATE},  
+  lastName: { type: Sequelize.STRING },
+  email: { type: Sequelize.STRING },
+  birthDate: { type: Sequelize.DATE },
 });
- 
+
+const Gouvernorat = db.define("gouvernorat", {
+  code: { type: Sequelize.STRING, primaryKey: true },
+  libelle: { type: Sequelize.STRING },
+});
+
 console.log("before DB SYNC");
 db.sync();
 console.log("after DB SYNC");
 
-module.exports = { User };
+// User.create()
+Gouvernorat.create({ code: "1000", libelle: "TUNIS" });
+Gouvernorat.create({ code: "1100", libelle: "ARIANA" });
+
+module.exports = { User, Gouvernorat };
