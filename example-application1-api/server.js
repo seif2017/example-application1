@@ -41,7 +41,8 @@ app.use("/api", api_routes);
 // });
 
 app.get("*", (req, res, next) => {
-  next(new error(14, 404, "URL '" + req.originalUrl + "' not found"));
+  next(new error("03", req.originalUrl));
+  // next(new error("44", "tttttt"));
 });
 
 app.use(logErrorMiddleware);
