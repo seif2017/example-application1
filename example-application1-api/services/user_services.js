@@ -1,4 +1,3 @@
-// import { User } from "../models/models";
 const models = require('../models/models');
 const randomId = require("random-id");
 
