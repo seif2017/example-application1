@@ -20,7 +20,7 @@ app.use(
   express.static(path.join(__dirname, "../example-application1-vue/dist"))
 );
 
-const logRequestMiddleware = require("./middlewares/logRequests");
+const logRequestMiddleware = require("./logging/logRequests");
 app.use(logRequestMiddleware);
 
 app.get("/", (req, res) => {
