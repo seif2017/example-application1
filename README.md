@@ -11,9 +11,9 @@
 * hotfix swagger-ui  (cors)
 * add CHANGELOG
 * add BDD table
+* add router-controller-service to backend
 
 ## TODO:
-* add router-controller-service to backend
 * add modal
 * add backend log (centralized)
 * remove frontend log (production)
