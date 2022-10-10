@@ -23,8 +23,7 @@ console.log("before DB SYNC");
 db.sync();
 console.log("after DB SYNC");
 
-// User.create()
-Gouvernorat.create({ code: "1000", libelle: "TUNIS" });
-Gouvernorat.create({ code: "1100", libelle: "ARIANA" });
+Gouvernorat.create({ code: "1000", libelle: "TUNIS" }).catch(err => {});
+Gouvernorat.create({ code: "1100", libelle: "ARIANA" }).catch(err => {});
 
 module.exports = { User, Gouvernorat };
