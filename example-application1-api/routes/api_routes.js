@@ -12,7 +12,7 @@ router.get("/users", (req, res) => {
 
 router.post("/users", (req, res) => {
   api_controller.addUser(req, res);
-  logs("[SND]", "user addedd");
+  logs("[SND]", "user added");
   res.json("user addedd");
 });
 

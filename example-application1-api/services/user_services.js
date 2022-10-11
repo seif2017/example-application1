@@ -16,7 +16,7 @@ exports.addUser = (user) => {
 }
 
 exports.getUsers = () => {
-  logs("[INFO]","Getting users ");
+  logs("[INFO]","Getting users ...");
 
     return users;
 }
