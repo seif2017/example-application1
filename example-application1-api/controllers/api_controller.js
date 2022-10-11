@@ -1,8 +1,8 @@
 const user_services = require("../services/user_services");
 const other_services = require("../services/other_services");
 
-exports.getUsers = (req, res) => {
-  const users = user_services.getUsers();
+exports.getUsers = async (req, res) => {
+  const users = await user_services.getUsers();
   return users;
 };
 

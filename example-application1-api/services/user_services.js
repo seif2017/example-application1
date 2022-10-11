@@ -1,23 +1,21 @@
-const models = require('../models/models');
+const models = require("../models/models");
 const randomId = require("random-id");
-const {logs} = require("../logging/logService"); 
+const { logs } = require("../logging/logService");
 
 // place holder for the data
-const users = [];
+// const users = [];
 
 exports.addUser = (user) => {
   user.id = randomId(10);
   // user.email = "a@a.com";
-  logs("[INFO]","Adding user : ", user);
+  logs("[INFO]", "Adding user : ", user);
 
   models.User.create(user);
+  // users.push(user);
+};
 
-  users.push(user);
-}
-
-exports.getUsers = () => {
-  logs("[INFO]","Getting users ...");
-
-    return users;
-}
-
+exports.getUsers = async () => {
+  logs("[INFO]", "Getting users ...");
+  const users = await models.User.findAll();
+  return users;
+};
