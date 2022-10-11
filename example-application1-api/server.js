@@ -9,6 +9,8 @@ process.env.TZ = "Africa/Tunis";
 
 require("dotenv").config();
 
+const { logs } = require("./logging/logService");
+
 const {
   logErrorMiddleware,
   returnErrorMiddleware,
@@ -27,7 +29,7 @@ app.get("/", (req, res) => {
   res.sendFile(
     path.join(__dirname, "../example-application1-vue/build/index.html")
   );
-  console.log("landing page");
+  logs("[INFO]", "landing page");
 });
 
 const api_routes = require("./routes/api_routes.js");
@@ -49,5 +51,5 @@ app.use(logErrorMiddleware);
 app.use(returnErrorMiddleware);
 
 app.listen(port, () => {
-  console.log(`Server listening on the port::${port}`);
+  logs("[INFO]", `Server listening on port ${port}`);
 });

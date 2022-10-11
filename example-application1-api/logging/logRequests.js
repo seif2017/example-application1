@@ -1,5 +1,8 @@
+const { logs } = require("./logService");
+var util = require('util');
+
 function logRequestMiddleware(req, res, next) {
-  console.log("RCV:", "77777");
+  logs("[RCV]", req.method , req.url, ", Body:", req.body); 
   next();
 }
 

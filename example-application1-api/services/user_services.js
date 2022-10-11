@@ -1,5 +1,6 @@
 const models = require('../models/models');
 const randomId = require("random-id");
+const {logs} = require("../logging/logService"); 
 
 // place holder for the data
 const users = [];
@@ -7,7 +8,7 @@ const users = [];
 exports.addUser = (user) => {
   user.id = randomId(10);
   // user.email = "a@a.com";
-  console.log("Adding user : ", user);
+  logs("[INFO]","Adding user : ", user);
 
   models.User.create(user);
 
@@ -15,7 +16,7 @@ exports.addUser = (user) => {
 }
 
 exports.getUsers = () => {
-  console.log("Getting users ");
+  logs("[INFO]","Getting users ");
 
     return users;
 }

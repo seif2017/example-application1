@@ -1,6 +1,8 @@
+const { logs } = require("../logging/logService");
+
 function logError(err) {
-  console.error(
-    "====> ERROR ====>",
+  logs(
+    "[ERROR]",
     "Code:",
     err.code,
     ", Status:",
@@ -17,7 +19,7 @@ function logErrorMiddleware(err, req, res, next) {
 
 function returnErrorMiddleware(err, req, res, next) {
   const jsonError = { error: { code: err.code, message: err.message } };
-  console.log("SND:", jsonError);
+  logs("[SND]", jsonError);
   res.status(err.statusCode).json(jsonError);
 }
 
