@@ -20,9 +20,8 @@ const Gouvernorat = db.define("gouvernorat", {
   libelle: { type: Sequelize.STRING },
 });
 
-logs("[INFO]","before DB SYNC");
 db.sync();
-logs("[INFO]","after DB SYNC");
+logs("[INFO]","DB SYNC");
 
 Gouvernorat.create({ code: "1000", libelle: "TUNIS" }).catch(err => {});
 Gouvernorat.create({ code: "1100", libelle: "ARIANA" }).catch(err => {});

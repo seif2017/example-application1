@@ -4,9 +4,8 @@ var util = require("util");
 module.exports = {
   async logs() {
     var datetime = new Date();
-    var date = datetime.toISOString().slice(0, 10);
-    var dir = "./logs/log_core_" + date + ".log";
-    fs.ensureFileSync(dir);
+    var file = "./logs/log_core_" + datetime.toLocaleDateString().replace("/", "-").replace("/", "-") + ".log";
+    fs.ensureFileSync(file);
     let content =
       datetime.toLocaleDateString() + " " + datetime.toLocaleTimeString("fr");
     for (var i in arguments) {
@@ -14,6 +13,6 @@ module.exports = {
     }
     console.log(content);
     content += "\n";
-    fs.appendFile(dir, content, (err) => {});
+    fs.appendFile(file, content, (err) => {});
   },
 };
