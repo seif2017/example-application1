@@ -22,6 +22,13 @@ app.use(
   express.static(path.join(__dirname, "../example-application1-vue/dist"))
 );
 
+// enable CORS without external module
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 const logRequestMiddleware = require("./logging/logRequests");
 app.use(logRequestMiddleware);
 
@@ -35,16 +42,9 @@ app.get("/", (req, res) => {
 const api_routes = require("./routes/api_routes.js");
 app.use("/api", api_routes);
 
-// enable CORS without external module
-// app.use(function (req, res, next) {
-//   res.header("Access-Control-Allow-Origin", "*");
-//   // res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//   next();
-// });
 
 app.get("*", (req, res, next) => {
   next(new error("03", req.originalUrl));
-  // next(new error("44", "tttttt"));
 });
 
 app.use(logErrorMiddleware);

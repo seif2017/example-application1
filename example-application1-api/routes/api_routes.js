@@ -9,8 +9,8 @@ router.get("/users", async (req, res) => {
 });
 
 router.post("/users", (req, res) => {
-  api_controller.addUser(req, res);
-  res.json("user added");
+  const user=api_controller.addUser(req, res);
+  res.json(user);
 });
 
 router.get("/getDate", (req, res) => {

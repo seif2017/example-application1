@@ -12,10 +12,14 @@
 * add CHANGELOG
 * add BDD table
 * add router-controller-service to backend
+* add backend log (centralized)
+* patch CORS
 
 ## TODO:
+* add helpers (database, build, ...)
+* add NGINX
+* add certificate
 * add modal
-* add backend log (centralized)
 * remove frontend log (production)
 * add bearer token
 * add frontend controls

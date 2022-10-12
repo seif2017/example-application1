@@ -7,10 +7,9 @@ const { logs } = require("../logging/logService");
 
 exports.addUser = (user) => {
   user.id = randomId(10);
-  // user.email = "a@a.com";
   logs("[INFO]", "Adding user : ", user);
-
   models.User.create(user);
+  return user
   // users.push(user);
 };
 

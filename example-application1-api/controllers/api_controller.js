@@ -1,5 +1,6 @@
 const user_services = require("../services/user_services");
 const other_services = require("../services/other_services");
+const { logs } = require("../logging/logService");
 
 exports.getUsers = async (req, res) => {
   const users = await user_services.getUsers();
@@ -7,9 +8,9 @@ exports.getUsers = async (req, res) => {
 };
 
 exports.addUser = (req, res) => {
-  const user = req.body.user;
-  user_services.addUser(user);
-  return "user added";
+  var user = req.body;
+  user = user_services.addUser(user);
+  return user;
 };
 
 exports.getDate = (req, res) => {

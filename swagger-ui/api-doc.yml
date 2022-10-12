@@ -74,17 +74,17 @@ components:
     User:
       type: object
       properties:
-        id:
+        firstName:
           type: string
-          example: 22
-        firstname:
+          example: Bouali
+        lastName:
           type: string
-          example: aaa
-        lastname:
-          type: string
-          example: aaa
+          example: Amine
         email:
           type: string
-          example: aaa
+          example: aaa@mail.com
+        id:
+          type: string
+          example: x67GLexLip
 
 
