@@ -3,7 +3,6 @@ const errorCodes = require("./errorCodes");
 class error extends Error {
   constructor(code, details) {
     var err = errorCodes[code];
-    // || { code: "??", status: 500, message: details || "Unknown error" };
     if (!err) {
       code = 99;
       err = errorCodes[code];
