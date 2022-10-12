@@ -44,7 +44,7 @@ app.use("/api", api_routes);
 
 
 app.get("*", (req, res, next) => {
-  next(new error("03", req.originalUrl));
+  next(new error(53, req.originalUrl));
 });
 
 app.use(logErrorMiddleware);
