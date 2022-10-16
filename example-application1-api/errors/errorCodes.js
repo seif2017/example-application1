@@ -11,7 +11,7 @@ const errorCodes = {
   10: { status: 404, message: "No invoices found" },
   11: { status: 400, message: "Invalid invoice id" },
   12: { status: 404, message: "Invoice id not found" },
-  13: { status: 400, message: "Invalid request body" },
+  13: { status: 400, message: "Invalid request body (%1)" },
   14: { status: 400, message: "Invalid transactionCode" },
   15: { status: 400, message: "Invalid transactionStatus" },
   16: { status: 400, message: "Invalid rejectionReason" },

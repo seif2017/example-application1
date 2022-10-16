@@ -16,6 +16,8 @@
 * patch CORS
 
 ## TODO:
+* add backend controls & errors (params, business, data)
+
 * add helpers (database, build, ...)
 * add NGINX
 * add certificate
@@ -23,7 +25,6 @@
 * remove frontend log (production)
 * add bearer token
 * add frontend controls
-* add backend controls (params & business)
 * add postman testing
 * add selenium testing
 * add pipeline CI/CD
