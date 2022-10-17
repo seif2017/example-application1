@@ -8,6 +8,21 @@ exports.getUsers = async (req, res) => {
   res.json(users);
 };
 
+exports.deleteUser = async (req, res, next) => {
+  const result = await user_services.deleteUser(req.params.id)
+  .then(() => {
+    res.json("user deleted");
+  }).catch((err) => {
+    next(err);
+  });
+};
+
+exports.updateUser = async (req, res, next) => {
+  var user = req.body;
+  const result = await user_services.updateUser(user);
+  res.json("user updated");
+};
+
 exports.addUser = async (req, res, next) => {
   var user = req.body;
   if (!user.firstName) next(new error(13, "Missing firstName"));
@@ -18,7 +33,8 @@ exports.addUser = async (req, res, next) => {
       res.json(user);
     })
     .catch((err) => {
-      next(new error(1));
+      logs("ERRRRR", err.name);
+      next(new error(99, "Error adding user (" + err.name + ")"));
     });
 };
 

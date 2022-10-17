@@ -8,6 +8,8 @@
                 <th>Firstname</th>
                 <th>Lastname</th>
                 <th>Email</th>
+                <th>Created</th>
+                <th>Created STR</th>
             </tr>
             </thead>
             <tbody>
@@ -16,6 +18,8 @@
                   <td>{{ item.firstName }}</td>
                   <td>{{ item.lastName }}</td>
                   <td>{{ item.email }}</td>
+                  <td>{{ item.createdAt }}</td>
+                  <td>{{ item.createdAtStr }}</td>
               </tr>
             </tbody>
         </table>

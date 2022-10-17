@@ -30,6 +30,7 @@ const errorCodes = {
   29: { status: 404, message: "FspSol not found" },
   30: { status: 400, message: "Invalid paymentReceipt" },
 
+  50: { status: 404, message: "User %1 not found" },
   53: { status: 404, message: "Invalid URL (%1)" },
 
   99: { status: 500, message: "Internal error: %1" },

@@ -3,20 +3,14 @@ const router = express.Router();
 
 const api_controller = require("../controllers/api_controller");
 
-router.get("/users", async (req, res) => {
-  api_controller.getUsers(req, res);
-});
+router.get("/users", api_controller.getUsers);
 
-router.post("/users", (req, res, next) => {
-  api_controller.addUser(req, res, next);
-});
+router.delete("/users/:id", api_controller.deleteUser);
 
-router.get("/getDate", (req, res) => {
-  api_controller.getDate(req, res);
-});
+router.post("/users", api_controller.addUser);
 
-router.get("/getEnv", (req, res) => {
-  api_controller.getEnv(req, res);
-});
+router.get("/getDate", api_controller.getDate);
+
+router.get("/getEnv", api_controller.getEnv);
 
 module.exports = router;
