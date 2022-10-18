@@ -23,6 +23,7 @@
 * add certificate
 * add modal
 * remove frontend log (production)
+* add stress test k6
 * add bearer token
 * add frontend controls
 * add postman testing

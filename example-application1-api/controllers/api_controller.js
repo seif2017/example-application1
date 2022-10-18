@@ -4,22 +4,30 @@ const { logs } = require("../logging/logService");
 const error = require("../errors/error");
 
 exports.getUsers = async (req, res, next) => {
-  const users = await user_services.getUsers();
-  res.json(users);
+  await user_services
+    .getUsers()
+    .then((users) => {
+      res.json(users);
+    })
+    .catch((err) => {
+      next(err);
+    });
 };
 
 exports.deleteUser = async (req, res, next) => {
-  const result = await user_services.deleteUser(req.params.id)
-  .then(() => {
-    res.json("user deleted");
-  }).catch((err) => {
-    next(err);
-  });
+  await user_services
+    .deleteUser(req.params.id)
+    .then(() => {
+      res.json("user deleted");
+    })
+    .catch((err) => {
+      next(err);
+    });
 };
 
 exports.updateUser = async (req, res, next) => {
   var user = req.body;
-  const result = await user_services.updateUser(user);
+  await user_services.updateUser(user); 
   res.json("user updated");
 };
 
