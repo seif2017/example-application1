@@ -6,18 +6,22 @@ const error = require("../errors/error");
 // place holder for the data
 // const users = [];
 
-exports.addUser = (user) => {
+exports.addUser = async (user) => {
   if (!user.id) user.id = randomId(10);
   logs("[INFO]", "Adding user : ", user);
-  user = models.User.create(user);
+  user = await models.User.create(user).catch((err) => {
+    logs("[ERROR]", "ADDING USER", err.name);
+    throw new error(51, user.id); // user already exists
+  });
+
   return user;
 
   // users.push(user);
 };
 
-exports.updateUser = (user) => {
+exports.updateUser = async (user) => {
   logs("[INFO]", "Updating user : ", user);
-  user = models.User.updateUser(user);
+  user = await models.User.updateUser(user);
   return user;
 };
 
@@ -29,7 +33,7 @@ exports.deleteUser = async (id1) => {
     },
   });
   logs("[INFO]", nb_affected, "rows affected");
-  if (nb_affected == 0) throw new error(50, id1);
+  if (nb_affected == 0) throw new error(50, id1); // user not found
 };
 
 exports.getUsers = async () => {

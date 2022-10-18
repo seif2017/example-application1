@@ -3,7 +3,7 @@ const other_services = require("../services/other_services");
 const { logs } = require("../logging/logService");
 const error = require("../errors/error");
 
-exports.getUsers = async (req, res) => {
+exports.getUsers = async (req, res, next) => {
   const users = await user_services.getUsers();
   res.json(users);
 };
@@ -27,23 +27,22 @@ exports.addUser = async (req, res, next) => {
   var user = req.body;
   if (!user.firstName) next(new error(13, "Missing firstName"));
 
-  user = await user_services
+  await user_services
     .addUser(user)
-    .then(() => {
-      res.json(user);
+    .then((data) => {
+      res.json(data);
     })
     .catch((err) => {
-      logs("ERRRRR", err.name);
-      next(new error(99, "Error adding user (" + err.name + ")"));
+      next(err);
     });
 };
 
-exports.getDate = (req, res) => {
+exports.getDate = (req, res, next) => {
   const dat = other_services.getDate();
   res.json(dat);
 };
 
-exports.getEnv = (req, res) => {
+exports.getEnv = (req, res, next) => {
   const env = other_services.getEnv();
   res.json(env);
 };

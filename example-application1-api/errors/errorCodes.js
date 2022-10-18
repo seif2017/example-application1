@@ -31,6 +31,7 @@ const errorCodes = {
   30: { status: 400, message: "Invalid paymentReceipt" },
 
   50: { status: 404, message: "User %1 not found" },
+  51: { status: 400, message: "User %1 already exists" },
   53: { status: 404, message: "Invalid URL (%1)" },
 
   99: { status: 500, message: "Internal error: %1" },
