@@ -3,26 +3,14 @@ const router = express.Router();
 
 const api_controller = require("../controllers/api_controller");
 
-router.get("/users", (req, res) => {
-  users = api_controller.getUsers(req, res);
-  res.json(users);
-});
+router.get("/users", api_controller.getUsers);
+router.delete("/users/:id", api_controller.deleteUser);
+router.put("/users/:id", api_controller.updateUser);
+router.post("/users", api_controller.addUser);
 
-router.post("/users", (req, res) => {
-  api_controller.addUser(req, res);
-  res.json("user addedd");
-});
+router.get("/getDate", api_controller.getDate);
+router.get("/getEnv", api_controller.getEnv);
 
-router.get("/getDate", (req, res) => {
-  const datenc = api_controller.getDate(req, res);
-  res.json(datenc);
-});
-
-router.get("/getEnv", (req, res) => {
-  const env = api_controller.getEnv(req, res);
-  console.log(env);
-  res.json(env);
-});
-
+router.get("/callApi", api_controller.callApi);
 
 module.exports = router;

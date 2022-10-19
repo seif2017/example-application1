@@ -1,4 +1,5 @@
 const Sequelize = require("sequelize");
+const {logs} = require("../logging/logService"); 
 
 const db = new Sequelize("db_test", "sa", "p@ssw0rd", {
   host: "mssql",
@@ -19,9 +20,8 @@ const Gouvernorat = db.define("gouvernorat", {
   libelle: { type: Sequelize.STRING },
 });
 
-console.log("before DB SYNC");
 db.sync();
-console.log("after DB SYNC");
+logs("[INFO]","DB SYNC invoked");
 
 Gouvernorat.create({ code: "1000", libelle: "TUNIS" }).catch(err => {});
 Gouvernorat.create({ code: "1100", libelle: "ARIANA" }).catch(err => {});

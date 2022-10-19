@@ -6,8 +6,11 @@ const app = express(),
 port = 3080;
 
 process.env.TZ = "Africa/Tunis";
+// process.env.TZ = "GMT-1"; // !!!!
 
 require("dotenv").config();
+
+const { logs } = require("./logging/logService");
 
 const {
   logErrorMiddleware,
@@ -20,33 +23,34 @@ app.use(
   express.static(path.join(__dirname, "../example-application1-vue/dist"))
 );
 
-const logRequestMiddleware = require("./middlewares/logRequests");
+// enable CORS without external module
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+const logRequestMiddleware = require("./logging/logRequests");
 app.use(logRequestMiddleware);
 
 app.get("/", (req, res) => {
   res.sendFile(
     path.join(__dirname, "../example-application1-vue/build/index.html")
   );
-  console.log("landing page");
+  logs("[INFO]", "landing page");
 });
 
 const api_routes = require("./routes/api_routes.js");
 app.use("/api", api_routes);
 
-// enable CORS without external module
-// app.use(function (req, res, next) {
-//   res.header("Access-Control-Allow-Origin", "*");
-//   // res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//   next();
-// });
 
 app.get("*", (req, res, next) => {
-  next(new error(14, 404, "URL '" + req.originalUrl + "' not found"));
+  next(new error(53, req.originalUrl));
 });
 
 app.use(logErrorMiddleware);
 app.use(returnErrorMiddleware);
 
 app.listen(port, () => {
-  console.log(`Server listening on the port::${port}`);
+  logs("[INFO]", `Server listening on port ${port}`);
 });
