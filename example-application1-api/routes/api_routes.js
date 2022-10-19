@@ -11,4 +11,6 @@ router.post("/users", api_controller.addUser);
 router.get("/getDate", api_controller.getDate);
 router.get("/getEnv", api_controller.getEnv);
 
+router.get("/callApi", api_controller.callApi);
+
 module.exports = router;

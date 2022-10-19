@@ -11,14 +11,15 @@
 * add backend log (centralized)
 * patch CORS
 * add postman collections
+* refine update user
 
 ## TODO:
-* refine update user
-* add external api call
+* add external api call 
+* rename files/entities (best modularity)
 * add error constants (more readability)
 * add schema validator
-* rename files/entities (best modularity)
-* add backend controls & errors (params, business, data)
+* refine backend controls & errors (params, business, data)
+* add unit testing
 * add postman testing
 * add bearer token
 
@@ -31,5 +32,6 @@
 * add frontend controls
 * add selenium testing
 * add pipeline CI/CD
+* add test driven dev
 * ...
 

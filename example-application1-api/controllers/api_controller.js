@@ -51,3 +51,10 @@ exports.getEnv = async (req, res, next) => {
     .then((env) => res.json(env))
     .catch((err) => next(err));
 };
+
+exports.callApi = async (req, res, next) => {
+  await other_services
+    .callApi()
+    .then((data) => res.json(data))
+    .catch((err) => next(err));
+};
