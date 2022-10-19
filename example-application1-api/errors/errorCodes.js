@@ -32,7 +32,7 @@ const errorCodes = {
 
   50: { status: 404, message: "User %1 not found" },
   51: { status: 400, message: "User %1 already exists" },
-  52: { status: 400, message: "Database error" },
+  52: { status: 400, message: "Database error (%1)" },
   53: { status: 404, message: "Invalid URL (%1)" },
 
   99: { status: 500, message: "Internal error: %1" },

@@ -6,29 +6,26 @@ const error = require("../errors/error");
 exports.getUsers = async (req, res, next) => {
   await user_services
     .getUsers()
-    .then((users) => {
-      res.json(users);
-    })
-    .catch((err) => {
-      next(err);
-    });
+    .then((users) => res.json(users))
+    .catch((err) => next(err));
 };
 
 exports.deleteUser = async (req, res, next) => {
+  const id = req.params.id;
   await user_services
-    .deleteUser(req.params.id)
-    .then(() => {
-      res.json("user deleted");
-    })
-    .catch((err) => {
-      next(err);
-    });
+    .deleteUser(id)
+    .then(() => res.json("user deleted"))
+    .catch((err) => next(err));
 };
 
 exports.updateUser = async (req, res, next) => {
-  var user = req.body;
-  await user_services.updateUser(user); 
-  res.json("user updated");
+  const id = req.params.id;
+  const user = req.body;
+
+  await user_services
+    .updateUser(id, user)
+    .then((user) => res.json(user))
+    .catch((err) => next(err));
 };
 
 exports.addUser = async (req, res, next) => {
@@ -37,20 +34,20 @@ exports.addUser = async (req, res, next) => {
 
   await user_services
     .addUser(user)
-    .then((data) => {
-      res.json(data);
-    })
-    .catch((err) => {
-      next(err);
-    });
+    .then((user) => res.json(user))
+    .catch((err) => next(err));
 };
 
-exports.getDate = (req, res, next) => {
-  const dat = other_services.getDate();
-  res.json(dat);
+exports.getDate = async (req, res, next) => {
+  await other_services
+    .getDate()
+    .then((dat) => res.json(dat))
+    .catch((err) => next(err));
 };
 
-exports.getEnv = (req, res, next) => {
-  const env = other_services.getEnv();
-  res.json(env);
+exports.getEnv = async (req, res, next) => {
+  await other_services
+    .getEnv()
+    .then((env) => res.json(env))
+    .catch((err) => next(err));
 };
