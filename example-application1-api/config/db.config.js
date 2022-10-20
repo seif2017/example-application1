@@ -4,7 +4,13 @@ module.exports = {
   PASSWORD: "p@ssw0rd",
   DB: "db_test",
   dialect: "mssql",
-  timezone: "Africa/Tunis",
+  // timezone: "+01:00",
+  // dialectOptions: {
+  //   useUTC: false, //for reading from database
+  //   // dateStrings: true,
+  //   timezone: "+01:00",
+  // },
+
   pool: {
     max: 5,
     min: 0,
@@ -12,14 +18,3 @@ module.exports = {
     idle: 10000,
   },
 };
-
-// const Sequelize = require("sequelize");
-// const {logs} = require("../logging/logService");
-
-// const db = new Sequelize("db_test", "sa", "p@ssw0rd", {
-//   host: "mssql",
-//   dialect: "mssql",
-//   timezone: "Africa/Tunis",
-// });
-
-// module.exports db;

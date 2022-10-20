@@ -13,14 +13,16 @@
 * add postman collections
 * refine update user
 * add external api call 
-* rename files/entities (best modularity)
+* rename files/entities (for best modularity)
+* correct createdAt/updatedAt GMT+1
 
 ## TODO:
-* correct createdAt/updatedAt GMT+1
-* add error constants (more readability)
+* add robust connectors
+* add error constants (for more readability)
 * add schema validator
 * refine backend controls & errors (params, business, data)
 * update swagger
+* add table relations
 * add unit testing
 * add postman testing
 * add bearer token
