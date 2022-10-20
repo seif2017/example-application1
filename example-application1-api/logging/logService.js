@@ -7,7 +7,7 @@ module.exports = {
     var file = "./logs/log_core_" + datetime.toLocaleDateString("sv-SE") + ".log";
     fs.ensureFileSync(file);
     let content =
-      datetime.toLocaleString("sv-SE");
+      datetime.toLocaleString("sv-SE"); // gives YYYY-MM-DD HH:mm:SS
     for (var i in arguments) {
       content += " " + util.format(arguments[i]);
     }

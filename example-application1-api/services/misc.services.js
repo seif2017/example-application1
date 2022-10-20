@@ -10,22 +10,11 @@ exports.getDate = async () => {
 
   const dt = new Date(); // ==> donne UTC   si process.env.TZ est vide
   logs("[INFO]", "Server time:", dt);
-  const dat =
-    dt.toLocaleDateString("fr", {
-      month: "2-digit",
-      day: "2-digit",
-      year: "numeric",
-    }) +
-    " " +
-    dt.toLocaleTimeString("fr", {
-      hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit",
-    });
+  const dat = dt.toLocaleString("pt-BR"); // gives JJ/MM/AAAA HH:MM:SS
 
   logs(
     "[INFO]",
-    "Server formatted (toLocaleDateString, toLocaleTimeString, fr) time:",
+    "Server formatted (toLocaleString pt-BR ==> JJ/MM/AAAA HH:MM:SS) datetime:",
     dat
   );
   return dat;
