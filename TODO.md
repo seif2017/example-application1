@@ -12,13 +12,15 @@
 * patch CORS
 * add postman collections
 * refine update user
-
-## TODO:
 * add external api call 
 * rename files/entities (best modularity)
+
+## TODO:
+* correct createdAt/updatedAt GMT+1
 * add error constants (more readability)
 * add schema validator
 * refine backend controls & errors (params, business, data)
+* update swagger
 * add unit testing
 * add postman testing
 * add bearer token

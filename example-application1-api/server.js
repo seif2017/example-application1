@@ -30,19 +30,25 @@ app.use(function (req, res, next) {
   next();
 });
 
+// const db = require("./models");
+// db.sequelize.sync();
+// logs("[INFO]","DB SYNC invoked");
+// db.gouvernorats.create({ code: "1000", libelle: "TUNIS" }).catch(err => {});
+// db.gouvernorats.create({ code: "1100", libelle: "ARIANA" }).catch(err => {});
+
 const logRequestMiddleware = require("./logging/logRequests");
 app.use(logRequestMiddleware);
 
 app.get("/", (req, res) => {
+  logs("[INFO]", "landing page");
   res.sendFile(
     path.join(__dirname, "../example-application1-vue/build/index.html")
   );
-  logs("[INFO]", "landing page");
 });
 
-const api_routes = require("./routes/api_routes.js");
-app.use("/api", api_routes);
-
+// const api_routes = require("./routes/api_routes.js");
+const routes = require("./routes");
+app.use("/api", routes);
 
 app.get("*", (req, res, next) => {
   next(new error(53, req.originalUrl));
