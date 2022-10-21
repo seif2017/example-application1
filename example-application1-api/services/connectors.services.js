@@ -1,26 +1,12 @@
 const { logs } = require("../logging/logService");
 const fetch = require("node-fetch-commonjs");
 const error = require("../errors/error");
+const connectors = require("../connectors");
 
-
-exports.callApi = async () => {
-    const connector_name = "CNX1";
-    const connector = "[" + connector_name + "]";
-    const url = "https://yesno.wtf/api";
-    logs("[INFO]", connector, "Invoking connector:", url);
-  
-    const res = await fetch(url).catch((err) => {
-      logs("[ERROR]", connector, err);
-      throw new error(54, err.name);
-    }); // connector error
-    const data = await res.json().catch((err) => {
-      logs("[ERROR]", connector, err);
-      throw new error(54, err.name);
-    }); // connector error
-    logs("[INFO]", connector, "Response:", data);
-  
-    return data;
-  };
-
-
-
+exports.callConnector = async (connector_name) => {
+  const connector = "[" + connector_name + "]";
+  logs("[INFO]", connector, "Invoking connector:", connector_name);
+  const data = await connectors.callApi(connector_name);
+  logs("[INFO]", connector, "Response:", data);
+  return data;
+};

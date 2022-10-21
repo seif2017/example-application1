@@ -4,9 +4,11 @@ const error = require("../errors/error");
 
 
 
-exports.callApi = async (req, res, next) => {
+exports.callConnector = async (req, res, next) => {
+  const connector_name = req.params.connector_name;
+
   await connectorsServices
-    .callApi()
+    .callConnector(connector_name)
     .then((data) => res.json(data))
     .catch((err) => next(err));
 };

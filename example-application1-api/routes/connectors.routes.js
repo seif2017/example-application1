@@ -3,6 +3,6 @@ const router = express.Router();
 
 const connectorsControllers = require("../controllers/connectors.controllers");
 
-router.get("/callApi", connectorsControllers.callApi);
+router.get("/callConnector/:connector_name", connectorsControllers.callConnector);
 
 module.exports = router;

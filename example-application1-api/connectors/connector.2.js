@@ -3,7 +3,7 @@ const fetch = require("node-fetch-commonjs");
 const error = require("../errors/error");
 
 exports.callApi = async () => {
-  const connector_name = "CNX1";
+  const connector_name = "CNX2";
   const connector = "[" + connector_name + "]";
   const url = "https://yesno.wtf/api";
   logs("[INFO]", connector, "Invoking connector:", url);
