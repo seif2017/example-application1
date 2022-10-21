@@ -4,12 +4,12 @@ module.exports = {
   PASSWORD: "p@ssw0rd",
   DB: "db_test",
   dialect: "mssql",
-  // timezone: "+01:00",
-  // dialectOptions: {
-  //   useUTC: false, //for reading from database
-  //   // dateStrings: true,
-  //   timezone: "+01:00",
-  // },
+  timezone: "+01:00",
+  dialectOptions: {
+    useUTC: false, //for reading from database
+    dateStrings: false,
+    timezone: "+01:00", 
+  },
 
   pool: {
     max: 5,

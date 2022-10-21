@@ -19,6 +19,7 @@ exports.addUser = async (user) => {
     logs("[ERROR]", "ADDING USER", err.name);
     if (err.name == "SequelizeUniqueConstraintError")
       throw new error(USER_ALREADY_EXISTS, user.id);
+    logs("[ERROR]", err);
     throw new error(DATABASE_ERROR, err.name);
   });
   return user;

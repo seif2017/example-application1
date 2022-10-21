@@ -17,9 +17,9 @@
 * correct createdAt/updatedAt GMT+1
 * add connector1
 * get connectors
+* error constants (for more readability)
 
 ## TODO:
-* error constants (for more readability)
 * add schema validator
 * refine backend controls & errors (params, business, data)
 
@@ -27,7 +27,7 @@
 * connector params (mono, multi)
 * attach entity to connector
 * connector logs
-* manage connectors 
+* manage connectors (activate, deactivate, add url, ...)
 
 * add bearer token
 * role management

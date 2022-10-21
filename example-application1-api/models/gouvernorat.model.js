@@ -9,7 +9,7 @@ module.exports = (sequelize, Sequelize) => {
       },
     }, 
     updatedAt: {
-      type: Sequelize.DATE,
+      type: Sequelize.DATE, 
       get() {
         return this.getDataValue("updatedAt").toLocaleString("sv-SE");
       },

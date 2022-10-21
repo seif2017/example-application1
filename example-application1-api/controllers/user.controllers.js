@@ -1,6 +1,9 @@
 const userServices = require("../services/user.services");
 const { logs } = require("../logging/logService");
 const error = require("../errors/error");
+const {
+  INVALID_REQUEST_BODY,
+} = require("../errors/errorCodes");
 
 exports.getUsers = async (req, res, next) => {
   await userServices

@@ -7,19 +7,25 @@ module.exports = (sequelize, Sequelize) => {
     birthDate: {
       type: Sequelize.DATE,
       get() {
-        return this.getDataValue("birthDate").toLocaleString("sv-SE");
+        dat = this.getDataValue("birthDate");
+        if (dat) dat = dat.toLocaleString("sv-SE");
+        return dat;
       },
     },
     createdAt: {
       type: Sequelize.DATE,
       get() {
-        return this.getDataValue("createdAt").toLocaleString("sv-SE");
+        dat = this.getDataValue("createdAt");
+        if (dat) dat = dat.toLocaleString("sv-SE");
+        return dat;
       },
     },
     updatedAt: {
       type: Sequelize.DATE,
       get() {
-        return this.getDataValue("updatedAt").toLocaleString("sv-SE");
+        dat = this.getDataValue("updatedAt");
+        if (dat) dat = dat.toLocaleString("sv-SE");
+        return dat;
       },
     },
   });
