@@ -29,7 +29,7 @@ exports.updateUser = async (req, res, next) => {
 
 exports.addUser = async (req, res, next) => {
   var user = req.body;
-  if (!user.firstName) next(new error(13, "Missing firstName"));
+  if (!user.firstName) next(new error(INVALID_REQUEST_BODY, "Missing firstName"));
 
   await userServices
     .addUser(user)

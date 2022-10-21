@@ -48,10 +48,11 @@ app.get("/", (req, res) => {
 
 // const api_routes = require("./routes/api_routes.js");
 const routes = require("./routes");
+const { INVALID_URL } = require("./errors/errorCodes");
 app.use("/api", routes);
 
 app.get("*", (req, res, next) => {
-  next(new error(53, req.originalUrl));
+  next(new error(INVALID_URL, req.originalUrl));
 });
 
 app.use(logErrorMiddleware);

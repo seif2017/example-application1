@@ -10,12 +10,12 @@ exports.callApi = async () => {
 
   const res = await fetch(url).catch((err) => {
     logs("[ERROR]", connector, err);
-    throw new error(54, err.name);
-  }); // connector error
+    throw new error(CONNECTOR_ERROR, err.name);
+  }); 
   const data = await res.json().catch((err) => {
     logs("[ERROR]", connector, err);
-    throw new error(54, err.name);
-  }); // connector error
+    throw new error(CONNECTOR_ERROR, err.name);
+  }); 
   logs("[INFO]", connector, "Response:", data);
 
   return data;

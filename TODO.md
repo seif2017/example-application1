@@ -16,27 +16,44 @@
 * rename files/entities (for best modularity)
 * correct createdAt/updatedAt GMT+1
 * add connector1
+* get connectors
 
 ## TODO:
-* add robust connectors
-* add error constants (for more readability)
+* error constants (for more readability)
 * add schema validator
 * refine backend controls & errors (params, business, data)
+
+* robust connector (unreacheable, error, ...)
+* connector params (mono, multi)
+* attach entity to connector
+* connector logs
+* manage connectors 
+
+* add bearer token
+* role management
+* admin
+* login
+* dashboard
+* add modals
+* add frontend controls
+
 * update swagger
 * add table relations
 * add unit testing
 * add postman testing
-* add bearer token
+* add test driven dev
 
 * add helpers (database, build, ...)
 * add NGINX
 * add certificate
-* add modal
-* remove frontend log (production)
+* remove frontend logs (production)
 * add stress test k6
-* add frontend controls
 * add selenium testing
 * add pipeline CI/CD
-* add test driven dev
 * ...
 
+* TICKETS APP
+* AGG V3 APP
+
+**** WRITE GUIDELINES DOCUMENT 
+**** WRITE BOOK 
