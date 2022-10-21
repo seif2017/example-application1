@@ -18,13 +18,13 @@
 * add connector1
 * get connectors
 * error constants (for more readability)
+* add schema validator for add user
 
 ## TODO:
-* add schema validator for add user
 * add schema validator for update user
 * refine backend controls & errors (params, business, data)
-
 * robust connector (unreacheable, error, ...)
+
 * connector params (mono, multi)
 * attach entity to connector
 * connector logs
