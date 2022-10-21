@@ -15,6 +15,7 @@
 * add external api call 
 * rename files/entities (for best modularity)
 * correct createdAt/updatedAt GMT+1
+* add connector1
 
 ## TODO:
 * add robust connectors
