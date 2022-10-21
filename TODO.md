@@ -20,7 +20,8 @@
 * error constants (for more readability)
 
 ## TODO:
-* add schema validator
+* add schema validator for add user
+* add schema validator for update user
 * refine backend controls & errors (params, business, data)
 
 * robust connector (unreacheable, error, ...)
