@@ -1,5 +1,4 @@
 const { logs } = require("../logging/logService");
-const fetch = require("node-fetch-commonjs");
 const error = require("../errors/error");
 
 const connector1 = require("./connector.1");
@@ -12,4 +11,8 @@ exports.callApi = async (connector_name) => {
   if (!connector_function) throw new error(99, "Invalid connector_function");
   const data = await connector_function.callApi();
   return data;
+};
+
+exports.getConnectors = async () => {
+  return ["CNX1", "CNX2"];
 };

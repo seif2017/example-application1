@@ -10,3 +10,10 @@ exports.callConnector = async (connector_name) => {
   logs("[INFO]", connector, "Response:", data);
   return data;
 };
+
+exports.getConnectors = async () => {
+  logs("[INFO]", "Getting connectors");
+  const data = await connectors.getConnectors();
+  logs("[INFO]", "Connectors list:", data);
+  return data;
+};

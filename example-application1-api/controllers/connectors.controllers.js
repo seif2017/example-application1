@@ -12,3 +12,10 @@ exports.callConnector = async (req, res, next) => {
     .then((data) => res.json(data))
     .catch((err) => next(err));
 };
+
+exports.getConnectors = async (req, res, next) => {
+  await connectorsServices
+    .getConnectors()
+    .then((data) => res.json(data))
+    .catch((err) => next(err));
+};
