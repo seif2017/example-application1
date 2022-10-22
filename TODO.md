@@ -19,6 +19,7 @@
 * get connectors
 * error constants (for more readability)
 * add schema validator for add user
+* connector logs
 
 ## TODO:
 * add schema validator for update user
@@ -26,8 +27,7 @@
 * robust connector (unreacheable, error, ...)
 
 * connector params (mono, multi)
-* attach entity to connector
-* connector logs
+* attach entities to connector
 * manage connectors (activate, deactivate, add url, ...)
 
 * add bearer token

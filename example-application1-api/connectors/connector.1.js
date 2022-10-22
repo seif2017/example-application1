@@ -6,7 +6,7 @@ exports.callApi = async () => {
   const connector_name = "CNX1";
   const connector = "[" + connector_name + "]";
   const url = "https://yesno.wtf/api";
-  logs("[INFO]", connector, "Invoking connector:", url);
+  logs("[INFO]", connector, "Fetching Url:", url);
 
   const res = await fetch(url).catch((err) => {
     logs("[ERROR]", connector, err);

@@ -1,11 +1,11 @@
 const userServices = require("../services/user.services");
-const  logs  = require("../logging/log-service");
-const error = require("../errors/custom-error.model");
+const logs = require("../logging/log-service");
+const CustomError = require("../errors/custom-error.model");
 const { INVALID_REQUEST_BODY } = require("../errors/error-codes");
 var util = require("util");
 
 const Ajv = require("ajv");
-
+const ajv = new Ajv();
 
 exports.getUsers = async (req, res, next) => {
   await userServices
@@ -38,7 +38,7 @@ exports.addUser = async (req, res, next) => {
   const userSchema = {
     type: "object",
     properties: {
-      firstName: { type: "string", maxLength:10 },
+      firstName: { type: "string", maxLength: 10 },
       // firstName: { type: "string" },
       lastName: { type: "string" },
       email: { type: "string" },
@@ -49,18 +49,13 @@ exports.addUser = async (req, res, next) => {
     additionalProperties: false,
   };
 
-  logs("befor validate")
-  const ajv = new Ajv();
-  const valid = ajv.validate(userSchema, user);
-  logs("after validate")
+  const valid = await ajv.validate(userSchema, user);
+  const errs = await util.format(ajv.errors);
+  if (!valid) 
+    return next(new CustomError(INVALID_REQUEST_BODY, errs));
 
-  if (!valid)
-    next(new error(INVALID_REQUEST_BODY, util.format(ajv.errors)));
-
-  if (!user.firstName)
-    next(new error(INVALID_REQUEST_BODY, "Missing firstName"));
-
-    logs("befor call service")
+  if (!user.firstName) 
+    return next(new CustomError(INVALID_REQUEST_BODY, "Missing firstName"));
 
   await userServices
     .addUser(user)
