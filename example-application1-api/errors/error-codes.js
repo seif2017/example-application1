@@ -6,7 +6,7 @@ const {
   UNAVAILABLE,
   GONE,
   CONFLICT,
-} = require("./httpStatusCodes");
+} = require("./http-status-codes");
 
 const errorCodes = {
   TOKEN_REQUIRED: {

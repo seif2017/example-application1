@@ -1,4 +1,4 @@
-const { logs } = require("../logging/logService");
+const  logs  = require("../logging/log-service");
 
 async function initDatabase(db) {
   await db.sequelize.sync();

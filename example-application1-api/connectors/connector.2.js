@@ -1,6 +1,6 @@
-const { logs } = require("../logging/logService");
+const  logs  = require("../logging/log-service");
 const fetch = require("node-fetch-commonjs");
-const error = require("../errors/error");
+const error = require("../errors/custom-error.model");
 
 exports.callApi = async () => {
   const connector_name = "CNX2";

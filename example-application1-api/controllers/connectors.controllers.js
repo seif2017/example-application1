@@ -1,6 +1,6 @@
 const connectorsServices = require("../services/connectors.services");
-const { logs } = require("../logging/logService");
-const error = require("../errors/error");
+const  logs  = require("../logging/log-service");
+const error = require("../errors/custom-error.model");
 
 
 

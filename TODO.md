@@ -50,6 +50,8 @@
 * remove frontend logs (production)
 * add stress test k6
 * add selenium testing
+
+* docker versionning
 * add pipeline CI/CD
 * ...
 
