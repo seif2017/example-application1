@@ -3,9 +3,9 @@ const fetch = require("node-fetch-commonjs");
 const error = require("../errors/custom-error.model");
 const connectors = require("../connectors");
 
-exports.callConnector = async (connector_name) => {
-  logs("[INFO]", "Invoking connector:", connector_name);
-  const data = await connectors.callApi(connector_name);
+exports.callConnector = async (connectorName) => {
+  logs("[INFO]", "Invoking connector:", connectorName);
+  const data = await connectors.callApi(connectorName);
   return data;
 };
 

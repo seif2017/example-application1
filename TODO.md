@@ -22,21 +22,26 @@
 * connector logs
 
 ## TODO:
-* add schema validator for update user
-* refine backend controls & errors (params, business, data)
-* robust connector (unreacheable, error, ...)
-
+* dynamic connectors list
+* dynamic billers list
 * connector params (mono, multi)
 * attach entities to connector
 * manage connectors (activate, deactivate, add url, ...)
 
+* add schema validator for update user
+* refine backend controls & errors (params, business, data)
+* robust connector (unreacheable, error, ...)
+
+* sandbox
+* logs & simulations
+
 * add bearer token
-* role management
-* admin
 * login
-* dashboard
 * add modals
 * add frontend controls
+* role management
+* admin
+* dashboard (users activity, connectors activity, api activity)
 
 * update swagger
 * add table relations

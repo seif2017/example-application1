@@ -5,10 +5,10 @@ const error = require("../errors/custom-error.model");
 
 
 exports.callConnector = async (req, res, next) => {
-  const connector_name = req.params.connector_name;
+  const connectorName = req.params.connectorName;
 
   await connectorsServices
-    .callConnector(connector_name)
+    .callConnector(connectorName)
     .then((data) => res.json(data))
     .catch((err) => next(err));
 };
