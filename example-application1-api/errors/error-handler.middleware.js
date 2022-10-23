@@ -16,7 +16,8 @@ function handleErrorMiddleware(err, req, res, next) {
   // response to client to prevent memory leaks in case you decide to
   // NOT use, like in this example, the NextFunction .i.e., next(new Error())
   const error = { code: customError.code, message: customError.message };
-  if (customError.additionalInfo) error.additionalInfo = customError.additionalInfo;
+  if (customError.additionalInfo)
+    error.additionalInfo = customError.additionalInfo;
   // console.log("#" + req.num_req, "[ERROR]", error);
   logs("#" + req.num_req, "[ERROR]", error);
 

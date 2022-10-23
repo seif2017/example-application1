@@ -9,9 +9,8 @@ fs.readdirSync(__dirname)
   .forEach((file) => {
     connectors.push(require("./" + file));
   });
-console.log("******connectors******", connectors);
 
-function findConncetor(connectorName) {
+function findConnector(connectorName) {
   const list = connectors.filter((con) => con.config.name === connectorName);
   if (list.length == 0)
     throw new CustomError(
@@ -22,7 +21,7 @@ function findConncetor(connectorName) {
 }
 
 exports.callApi = async (connectorName) => {
-  const connector = findConncetor(connectorName);
+  const connector = findConnector(connectorName);
   const data = await connector.callApi();
   return data;
 };
@@ -36,8 +35,8 @@ exports.getConnectors = async () => {
 };
 
 exports.getConnector = async (connectorName) => {
-  const connector = findConncetor(connectorName);
-  return {config:connector.config, billerList:connector.billerList};
+  const connector = findConnector(connectorName);
+  return { config: connector.config, billerList: connector.billerList };
 };
 
 exports.getActiveConnectors = async () => {
@@ -46,4 +45,35 @@ exports.getActiveConnectors = async () => {
     if (connector.config.isActive) list.push(connector.config.name);
   }
   return list;
+};
+
+exports.getBillers = async () => {
+  const list = [];
+  for (const connector of connectors) {
+    list.push(...connector.billerList);
+  }
+  return list;
+};
+
+exports.getBiller = async (biller) => {
+  b = findBiller(biller);
+  return b;
+};
+
+function findBiller(billerName) {
+  const list = [];
+  for (const connector of connectors) {
+    list.push(...connector.billerList);
+  }
+  const res = list.filter((b) => b.name == billerName);
+  if (res.length == 0)
+    throw new CustomError(INTERNAL_SERVER, "Invalid biller " + billerName);
+  return list[0];
+}
+
+exports.callBillerApi = async (biller) => {
+  b = findBiller(biller);
+  const connector = findConnector(b.connectorName);
+  const data = await connector.callApi();
+  return data;
 };

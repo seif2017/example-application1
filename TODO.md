@@ -20,17 +20,20 @@
 * error constants (for more readability)
 * add schema validator for add user
 * connector logs
-
-## TODO:
 * dynamic connectors list
-* dynamic billers list
 * connector params (mono, multi)
 * attach entities to connector
-* manage connectors (activate, deactivate, add url, ...)
+* dynamic billers list
+
+## TODO:
+* manage connectors (activate, deactivate, add entity, ...)
+* manage billers
 
 * add schema validator for update user
 * refine backend controls & errors (params, business, data)
-* robust connector (unreacheable, error, ...)
+* robust connector call (unreacheable, error, ...)
+
+* public api
 
 * sandbox
 * logs & simulations
