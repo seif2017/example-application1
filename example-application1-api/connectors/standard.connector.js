@@ -6,6 +6,7 @@ exports.config = {
   name: "standard",
   isActive: true,
   dynamicList: false,
+  timeout: 10 * 1000,
 };
 
 exports.billerList = [];

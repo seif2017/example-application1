@@ -6,6 +6,7 @@ exports.config = {
   name: "sonede",
   isActive: true,
   dynamicList: false,
+  timeout: 10 * 1000,
 };
 
 exports.billerList = [
@@ -14,6 +15,7 @@ exports.billerList = [
     name: "SONEDE",
     isActive: true,
     url: "https://yesno.wtf/api",
+    timeout: 10 * 1000,
     logo : "https://kkkk.gif"
   },
 ];

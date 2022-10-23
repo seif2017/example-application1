@@ -8,6 +8,7 @@ exports.config = {
   dynamicList: true,
   listTtl: 60 * 60 * 1000,
   lastRefreshTime: "1970-01-01 00:00",
+  timeout: 10 * 1000,
 };
 
 exports.billerList = [
@@ -16,6 +17,7 @@ exports.billerList = [
     name: "TRUST-IT",
     isActive: true,
     url: "https://yesno.wtf/api",
+    timeout: 10 * 1000,
     logo: "https://kkkk.gif",
   },
   {
@@ -23,6 +25,7 @@ exports.billerList = [
     name: "WE-SETTLE",
     isActive: true,
     url: "https://yesno.wtf/api",
+    timeout: 10 * 1000,
     logo: "https://kkkk.gif",
   },
   {
@@ -30,6 +33,7 @@ exports.billerList = [
     name: "SMT",
     isActive: true,
     url: "https://yesno.wtf/api",
+    timeout: 10 * 1000,
     logo: "https://kkkk.gif",
   },
 ];

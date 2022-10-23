@@ -6,6 +6,7 @@ exports.config = {
   name: "sandbox",
   isActive: true,
   dynamicList: false,
+  timeout: 10 * 1000,
 };
 
 exports.billerList = [
@@ -14,6 +15,7 @@ exports.billerList = [
     name: "STEG-SANDBOX",
     isActive: true,
     url: "https://yesno.wtf/api",
+    timeout: 10 * 1000,
     logo: "https://kkkk.gif",
   },
   {
@@ -21,6 +23,7 @@ exports.billerList = [
     name: "SONEDE-SANDBOX",
     isActive: true,
     url: "https://yesno.wtf/api",
+    timeout: 10 * 1000,
     logo: "https://kkkk.gif",
   },
   {
@@ -28,6 +31,7 @@ exports.billerList = [
     name: "TOPNET-SANDBOX",
     isActive: true,
     url: "https://yesno.wtf/api",
+    timeout: 10 * 1000,
     logo: "https://kkkk.gif",
   },
 ];
