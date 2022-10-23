@@ -13,6 +13,7 @@ exports.billerList = [
   {
     code: "600",
     name: "TOPNET",
+    connectorName : "topnet",
     isActive: true,
     url: "https://yesno.wtf/api",
     timeout: 10 * 1000,

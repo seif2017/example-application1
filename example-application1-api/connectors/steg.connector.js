@@ -13,6 +13,7 @@ exports.billerList = [
   {
     code: "700",
     name: "STEG",
+    connectorName : "steg",
     isActive: true,
     url: "https://yesno.wtf/api",
     timeout: 10 * 1000,

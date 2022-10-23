@@ -13,6 +13,7 @@ exports.billerList = [
   {
     code: "500",
     name: "SONEDE",
+    connectorName : "sonede",
     isActive: true,
     url: "https://yesno.wtf/api",
     timeout: 10 * 1000,

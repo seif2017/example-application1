@@ -1,6 +1,4 @@
 const  logs  = require("../logging/log-service");
-const fetch = require("node-fetch-commonjs");
-const error = require("../errors/custom-error.model");
 const connectors = require("../connectors");
 
 exports.callConnector = async (connectorName) => {
@@ -12,5 +10,11 @@ exports.callConnector = async (connectorName) => {
 exports.getConnectors = async () => {
   logs("[INFO]", "Getting connectors");
   const data = await connectors.getConnectors();
+  return data;
+};
+
+exports.getConnector = async (connectorName) => {
+  logs("[INFO]", "Getting connector:", connectorName);
+  const data = await connectors.getConnector(connectorName);
   return data;
 };

@@ -35,6 +35,11 @@ exports.getConnectors = async () => {
   return list;
 };
 
+exports.getConnector = async (connectorName) => {
+  const connector = findConncetor(connectorName);
+  return {config:connector.config, billerList:connector.billerList};
+};
+
 exports.getActiveConnectors = async () => {
   const list = [];
   for (const connector of connectors) {

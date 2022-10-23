@@ -15,6 +15,7 @@ exports.billerList = [
   {
     code: "901",
     name: "TRUST-IT",
+    connectorName : "business",
     isActive: true,
     url: "https://yesno.wtf/api",
     timeout: 10 * 1000,
@@ -23,6 +24,7 @@ exports.billerList = [
   {
     code: "902",
     name: "WE-SETTLE",
+    connectorName : "business",
     isActive: true,
     url: "https://yesno.wtf/api",
     timeout: 10 * 1000,
@@ -31,6 +33,7 @@ exports.billerList = [
   {
     code: "903",
     name: "SMT",
+    connectorName : "business",
     isActive: true,
     url: "https://yesno.wtf/api",
     timeout: 10 * 1000,

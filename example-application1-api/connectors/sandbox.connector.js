@@ -13,6 +13,7 @@ exports.billerList = [
   {
     code: "s700",
     name: "STEG-SANDBOX",
+    connectorName : "sandbox",
     isActive: true,
     url: "https://yesno.wtf/api",
     timeout: 10 * 1000,
@@ -21,6 +22,7 @@ exports.billerList = [
   {
     code: "s500",
     name: "SONEDE-SANDBOX",
+    connectorName : "sandbox",
     isActive: true,
     url: "https://yesno.wtf/api",
     timeout: 10 * 1000,
@@ -29,6 +31,7 @@ exports.billerList = [
   {
     code: "s600",
     name: "TOPNET-SANDBOX",
+    connectorName : "sandbox",
     isActive: true,
     url: "https://yesno.wtf/api",
     timeout: 10 * 1000,

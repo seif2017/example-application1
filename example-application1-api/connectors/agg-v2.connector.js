@@ -9,7 +9,6 @@ exports.config = {
   listTtl: 60 * 60 * 1000,
   lastRefreshTime: "1970-01-01 00:00",
   timeout: 10 * 1000,
-
 };
 
 exports.billerList = [];
