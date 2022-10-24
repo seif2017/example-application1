@@ -24,9 +24,10 @@
 * connector params (mono, multi)
 * attach entities to connector
 * dynamic billers list
+* role management
 
 ## TODO:
-* role management
+* persistent roles
 * login
 * add bearer token
 
