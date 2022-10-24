@@ -22,6 +22,8 @@ db.sequelize = sequelize;
 
 db.users = require("./user.model.js")(sequelize, Sequelize);
 db.gouvernorats = require("./gouvernorat.model.js")(sequelize, Sequelize);
+db.roles = require("./role.model.js")(sequelize, Sequelize);
+db.rolesPermission = require("./role-permission.model.js")(sequelize, Sequelize);
 
 initDatabase(db);
 

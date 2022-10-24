@@ -1,4 +1,4 @@
-const permissions = {
+const Permission = {
   USER_UPDATE: "USER_UPDATE",
   USER_CREATE: "USER_CREATE",
   USER_DELETE: "USER_DELETE",
@@ -8,4 +8,4 @@ const permissions = {
   ROLE_UPDATE: "ROLE_UPDATE",
 };
 
-module.exports = permissions;
+module.exports = Permission;
