@@ -27,7 +27,6 @@ services:
     image: swaggerapi/swagger-ui
     restart: always
     environment:
-      # - BASE_URL=/docs
       - BASE_URL=/
       - SWAGGER_JSON=/apis/api-doc.yml
       - ENABLE_CORS=true

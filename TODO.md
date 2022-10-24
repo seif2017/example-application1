@@ -19,13 +19,17 @@
 * get connectors
 * error constants (for more readability)
 * add schema validator for add user
-* connector logs
+* connectors logs
 * dynamic connectors list
 * connector params (mono, multi)
 * attach entities to connector
 * dynamic billers list
 
 ## TODO:
+* role management
+* login
+* add bearer token
+
 * manage connectors (activate, deactivate, add entity, ...)
 * manage billers
 
@@ -38,11 +42,9 @@
 * sandbox
 * logs & simulations
 
-* add bearer token
-* login
+
 * add modals
 * add frontend controls
-* role management
 * admin
 * dashboard (users activity, connectors activity, api activity)
 

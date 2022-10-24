@@ -1,5 +1,4 @@
 const userServices = require("../services/user.services");
-const logs = require("../logging/log-service");
 const CustomError = require("../errors/custom-error.model");
 const { INVALID_REQUEST_BODY } = require("../errors/error-codes");
 var util = require("util");

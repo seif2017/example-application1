@@ -1,6 +1,5 @@
 const connectorsServices = require("../services/connector.services");
 const logs = require("../logging/log-service");
-const error = require("../errors/custom-error.model");
 
 exports.callConnector = async (req, res, next) => {
   const connectorName = req.params.connectorName;
