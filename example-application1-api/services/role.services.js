@@ -16,3 +16,11 @@ exports.checkPermission = async (permission, role) => {
 
   return "ok";
 };
+
+exports.getRoles = async () => {
+   return roles;
+};
+
+exports.getPermissions = async () => {
+  return permissions;
+};

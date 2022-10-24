@@ -8,3 +8,17 @@ exports.checkPermission = async (req, res, next) => {
     .then((data) => res.json(data))
     .catch((err) => next(err));
 };
+
+exports.getRoles = async (req, res, next) => {
+  await roleServices
+    .getRoles()
+    .then((data) => res.json(data))
+    .catch((err) => next(err));
+};
+
+exports.getPermissions = async (req, res, next) => {
+  await roleServices
+    .getPermissions()
+    .then((data) => res.json(data))
+    .catch((err) => next(err));
+};
