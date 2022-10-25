@@ -1,8 +1,10 @@
+
 module.exports = (sequelize, Sequelize) => {
   const RolePermission = sequelize.define("role-permission", {
-    role: { type: Sequelize.STRING },
+    // role: { type: Sequelize.STRING },
     permission: { type: Sequelize.STRING },
-    createdAt: {
+
+    createdAt: { 
       type: Sequelize.DATE,
       get() {
         dat = this.getDataValue("createdAt");

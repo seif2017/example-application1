@@ -1,6 +1,8 @@
+
 module.exports = (sequelize, Sequelize) => {
   const Role = sequelize.define("role", {
     role: { type: Sequelize.STRING, primaryKey: true },
+    
     createdAt: {
       type: Sequelize.DATE,
       get() {
@@ -17,7 +19,10 @@ module.exports = (sequelize, Sequelize) => {
         return dat;
       },
     },
+
   });
+  
+
 
   return Role;
 };

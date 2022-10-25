@@ -27,9 +27,10 @@
 * role management
 * persistent roles
 * public api
+* add table relations
 
 ## TODO:
-* add table relations
+* persitent params
 
 * login
 * add bearer token
