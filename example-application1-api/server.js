@@ -10,14 +10,6 @@ process.env.TZ = "Africa/Tunis";
 
 require("dotenv").config();
 
-const { logs } = require("./logging/logService");
-
-const {
-  logErrorMiddleware,
-  returnErrorMiddleware,
-} = require("./errors/errorHandler");
-const error = require("./errors/error");
-
 app.use(bodyParser.json());
 app.use(
   express.static(path.join(__dirname, "../example-application1-vue/dist"))
@@ -30,26 +22,40 @@ app.use(function (req, res, next) {
   next();
 });
 
-const logRequestMiddleware = require("./logging/logRequests");
-app.use(logRequestMiddleware);
+const errorHandlerMiddleware = require("./errors/error-handler.middleware");
+const requestNumberingMiddleware = require("./logging/request-numbering.middleware");
+const requestLoggingMiddleware = require("./logging/request-logging.middleware");
+const responseLoggingMiddleware = require("./logging/response-logging.middleware");
+const CustomError = require("./errors/custom-error.model");
+const { INVALID_URL } = require("./errors/error-codes");
+const logs = require("./logging/log-service");
+
 
 app.get("/", (req, res) => {
+  logs("[INFO]", "landing page");
   res.sendFile(
     path.join(__dirname, "../example-application1-vue/build/index.html")
   );
-  logs("[INFO]", "landing page");
 });
 
-const api_routes = require("./routes/api_routes.js");
-app.use("/api", api_routes);
+// use numbering requests
+app.use(requestNumberingMiddleware);
 
+// use logging requests
+app.use(requestLoggingMiddleware);
 
-app.get("*", (req, res, next) => {
-  next(new error(53, req.originalUrl));
+// use logging responses
+app.use(responseLoggingMiddleware);
+
+const routes = require("./routes");
+app.use("/api", routes);
+
+app.use("*", (req, res, next) => {
+  next(new CustomError(INVALID_URL, req.originalUrl));
 });
 
-app.use(logErrorMiddleware);
-app.use(returnErrorMiddleware);
+// add custom error handler as the last middleware
+app.use(errorHandlerMiddleware);
 
 app.listen(port, () => {
   logs("[INFO]", `Server listening on port ${port}`);
