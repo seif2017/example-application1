@@ -25,12 +25,16 @@
 * attach entities to connector
 * dynamic billers list
 * role management
+* persistent roles
+* public api
 
 ## TODO:
-* persistent roles
+* add table relations
+
 * login
 * add bearer token
 
+* manage roles
 * manage connectors (activate, deactivate, add entity, ...)
 * manage billers
 
@@ -38,11 +42,8 @@
 * refine backend controls & errors (params, business, data)
 * robust connector call (unreacheable, error, ...)
 
-* public api
-
-* sandbox
+* sandbox (random, on the fly, manage sandbox ...)
 * logs & simulations
-
 
 * add modals
 * add frontend controls
@@ -50,7 +51,6 @@
 * dashboard (users activity, connectors activity, api activity)
 
 * update swagger
-* add table relations
 * add unit testing
 * add postman testing
 * add test driven dev
