@@ -4,9 +4,7 @@ const randomId = require("random-id");
 const  logs  = require("../logging/log-service");
 const CustomError = require("../errors/custom-error.model");
 const {
-  USER_ALREADY_EXISTS,
   DATABASE_ERROR,
-  USER_NOT_FOUND,
 } = require("../errors/error-codes");
 
 
