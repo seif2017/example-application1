@@ -29,10 +29,9 @@
 * public apis
 * add table relations
 * persitent params
+* parallel features (1/+ dev)
 
 ## TODO:
-
-* parallel features (1/+ dev)
 
 * login
 * add bearer token
