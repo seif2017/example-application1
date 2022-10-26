@@ -7,7 +7,6 @@ const {
   DATABASE_ERROR,
 } = require("../errors/error-codes");
 
-
 exports.login = async () => {
   logs("[INFO]", "Getting users ...");
   const users = await db.users.findAll().catch((err) => {
