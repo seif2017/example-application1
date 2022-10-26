@@ -26,7 +26,7 @@
 * dynamic billers list
 * role management
 * persistent roles
-* public api
+* public apis
 * add table relations
 * persitent params
 

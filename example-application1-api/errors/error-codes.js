@@ -155,29 +155,29 @@ const errorCodes = {
   USER_NOT_FOUND: {
     code: "50",
     status: NOT_FOUND,
-    message: "User %1 not found",
+    message: "User not found",
   },
   USER_ALREADY_EXISTS: {
     code: "51",
     status: BAD_REQUEST,
-    message: "User %1 already exists",
+    message: "User already exists",
   },
   DATABASE_ERROR: {
     code: "52",
     status: BAD_REQUEST,
-    message: "Database error (%1)",
+    message: "Database error",
   },
   INVALID_URL: { code: "53", status: NOT_FOUND, message: "Invalid URL (%1)" },
   CONNECTOR_ERROR: {
     code: "54",
     status: UNAVAILABLE,
-    message: "Connector error (%1)",
+    message: "Connector error",
   },
 
   INTERNAL_SERVER: {
     code: "99",
     status: INTERNAL_SERVER,
-    message: "Internal error: %1",
+    message: "Internal server error",
   },
 };
 

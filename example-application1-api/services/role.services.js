@@ -2,7 +2,7 @@ const db = require("../models");
 
 const logs = require("../logging/log-service");
 const CustomError = require("../errors/custom-error.model");
-const { NOT_FOUND } = require("../errors/http-status-codes");
+const { NOT_FOUND } = require("../errors/error-codes");
 const Roles = require("../models/role.model");
 const Permissions = require("../models/permission.model");
 
