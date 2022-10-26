@@ -1,7 +1,7 @@
 const CustomError = require("../errors/custom-error.model");
 
 const fs = require("fs");
-const { INTERNAL_SERVER } = require("../errors/http-status-codes");
+const { INTERNAL_SERVER } = require("../errors/error-codes");
 
 const connectors = [];
 fs.readdirSync(__dirname)

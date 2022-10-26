@@ -20,6 +20,7 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
+db.params = require("./param.model.js")(sequelize, Sequelize);
 db.users = require("./user.model.js")(sequelize, Sequelize);
 db.gouvernorats = require("./gouvernorat.model.js")(sequelize, Sequelize);
 db.roles = require("./role.model.js")(sequelize, Sequelize);
@@ -27,9 +28,6 @@ db.rolesPermission = require("./role-permission.model.js")(
   sequelize,
   Sequelize
 );
-
-// db.rolesPermission.belongsTo(db.roles, { as: 'role', name : 'fk'} );
-// db.roles.hasMany(db.rolesPermission, { foreignKey: 'role' });
 
 db.roles.hasMany(db.rolesPermission, { foreignKey: 'roleId'});
 db.rolesPermission.belongsTo(db.roles, {foreignKey: 'roleId'});

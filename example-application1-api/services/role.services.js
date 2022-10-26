@@ -2,13 +2,13 @@ const db = require("../models");
 
 const logs = require("../logging/log-service");
 const CustomError = require("../errors/custom-error.model");
-const { NOT_FOUND } = require("../errors/http-status-codes");
+const { NOT_FOUND } = require("../errors/error-codes");
 const Roles = require("../models/role.model");
 const Permissions = require("../models/permission.model");
 
 exports.checkPermission = async (permission, role) => {
   const res = await db.rolesPermission
-    .findAll({ where: { role: role, permission: permission } })
+    .findAll({ where: { roleId: role, permission: permission } })
     .catch((err) => {
       throw new CustomError(DATABASE_ERROR, err.name);
     });

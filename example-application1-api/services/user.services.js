@@ -9,9 +9,6 @@ const {
   USER_NOT_FOUND,
 } = require("../errors/error-codes");
 
-
-
-
 // place holder for the data
 // const users = [];
 
@@ -72,3 +69,4 @@ exports.getUsers = async () => {
   });
   return users;
 };
+

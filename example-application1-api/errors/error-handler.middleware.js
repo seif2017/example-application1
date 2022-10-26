@@ -1,6 +1,6 @@
 const logs = require("../logging/log-service");
 const CustomError = require("./custom-error.model");
-const { INTERNAL_SERVER } = require("./http-status-codes");
+const { INTERNAL_SERVER } = require("./error-codes");
 
 function handleErrorMiddleware(err, req, res, next) {
   let customError = err;
