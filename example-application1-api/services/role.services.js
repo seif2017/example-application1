@@ -8,7 +8,7 @@ const Permissions = require("../models/permission.model");
 
 exports.checkPermission = async (permission, role) => {
   const res = await db.rolesPermission
-    .findAll({ where: { role: role, permission: permission } })
+    .findAll({ where: { roleId: role, permission: permission } })
     .catch((err) => {
       throw new CustomError(DATABASE_ERROR, err.name);
     });

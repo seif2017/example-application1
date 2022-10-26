@@ -28,9 +28,11 @@
 * persistent roles
 * public api
 * add table relations
+* persitent params
 
 ## TODO:
-* persitent params
+
+* parallel features (1/+ dev)
 
 * login
 * add bearer token

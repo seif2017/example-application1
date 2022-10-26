@@ -5,6 +5,8 @@ async function initDatabase(db) {
   await db.sequelize.sync({ force: true });
   logs("[INFO]", "DB SYNC invoked");
 
+  db.params.findOrCreate({ where: { id: "PARAM1", value: "ABCDEF" } });
+
   db.gouvernorats.findOrCreate({ where: { code: "1000", libelle: "TUNIS" } });
   db.gouvernorats.findOrCreate({ where: { code: "1100", libelle: "ARIANA" } });
  
