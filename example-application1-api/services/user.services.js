@@ -9,9 +9,6 @@ const {
   USER_NOT_FOUND,
 } = require("../errors/error-codes");
 
-
-
-
 // place holder for the data
 // const users = [];
 
@@ -66,6 +63,14 @@ exports.deleteUser = async (id) => {
 };
 
 exports.getUsers = async () => {
+  logs("[INFO]", "Getting users ...");
+  const users = await db.users.findAll().catch((err) => {
+    throw new CustomError(DATABASE_ERROR, err.name);
+  });
+  return users;
+};
+
+exports.login = async () => {
   logs("[INFO]", "Getting users ...");
   const users = await db.users.findAll().catch((err) => {
     throw new CustomError(DATABASE_ERROR, err.name);
