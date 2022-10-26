@@ -70,10 +70,3 @@ exports.getUsers = async () => {
   return users;
 };
 
-exports.login = async () => {
-  logs("[INFO]", "Getting users ...");
-  const users = await db.users.findAll().catch((err) => {
-    throw new CustomError(DATABASE_ERROR, err.name);
-  });
-  return users;
-};
