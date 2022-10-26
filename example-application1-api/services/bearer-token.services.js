@@ -7,7 +7,7 @@ exports.newToken = async (user) => {
   const token="tttt"
   return token;
 };
-
+ 
 exports.verifyToken = async (token) => {
   logs("[INFO]", "Generating token for user:", user);
   // const data = await connectors.callBillerApi(biller);
