@@ -30,11 +30,13 @@
 * add table relations
 * persitent params
 * parallel features (1/+ dev)
+* login
 
 ## TODO:
-
-* login
+* database crypt password (param persistent)
+* login return token
 * add bearer token
+* add change password + protect
 
 * manage roles
 * manage connectors (activate, deactivate, add entity, ...)

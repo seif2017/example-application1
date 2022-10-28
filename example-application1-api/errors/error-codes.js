@@ -167,12 +167,13 @@ const errorCodes = {
     status: BAD_REQUEST,
     message: "Database error",
   },
-  INVALID_URL: { code: "53", status: NOT_FOUND, message: "Invalid URL (%1)" },
+  INVALID_URL: { code: "53", status: NOT_FOUND, message: "Invalid URL" },
   CONNECTOR_ERROR: {
     code: "54",
     status: UNAVAILABLE,
     message: "Connector error",
   },
+  INVALID_LOGIN: { code: "55", status: NOT_FOUND, message: "Invalid login" },
 
   INTERNAL_SERVER: {
     code: "99",
