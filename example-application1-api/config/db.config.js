@@ -1,4 +1,4 @@
-module.exports = {
+module.exports = { 
   HOST: "mssql",
   USER: "sa",
   PASSWORD: "p@ssw0rd",

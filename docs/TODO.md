@@ -22,7 +22,7 @@
 * connectors logs
 * dynamic connectors list
 * connector params (mono, multi)
-* attach entities to connector
+* attach billers to connector
 * dynamic billers list
 * role management
 * persistent roles
@@ -31,10 +31,11 @@
 * persitent params
 * parallel features (1/+ dev)
 * login
+* add helpers (database, build, ...)
 
 ## TODO:
-* database crypt password (param persistent)
-* login return token
+* database crypt password (secret param persistent)
+* login return token (secret param persistent)
 * add bearer token
 * add change password + protect
 
@@ -59,7 +60,6 @@
 * add postman testing
 * add test driven dev
 
-* add helpers (database, build, ...)
 * add NGINX
 * add certificate
 * remove frontend logs (production)
