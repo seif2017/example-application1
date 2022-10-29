@@ -9,7 +9,8 @@ exports.getDate = async (req, res, next) => {
 
 exports.getEnv = async (req, res, next) => {
   await miscServices
-    .getEnv()
+    // .getEnv()
+    .getParam()
     .then((env) => res.json(env))
     .catch((err) => next(err));
 };
