@@ -2,7 +2,8 @@ const logs = require("../logging/log-service");
 const { USER_CREATE, USER_DELETE } = require("./permission.model");
 
 async function initDatabase(db) {
-  await db.sequelize.sync({ force: true });
+  // await db.sequelize.sync({ force: true });  // if recreate db
+  await db.sequelize.sync();
   logs("[INFO]", "DB SYNC invoked");
 
   db.params.findOrCreate({ where: { id: "PARAM1", value: "ABCDEF" } });

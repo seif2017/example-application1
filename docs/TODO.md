@@ -40,7 +40,7 @@
 * add change password + protect
 
 * manage roles
-* manage connectors (activate, deactivate, add entity, ...)
+* manage connectors (activate, deactivate, add biller, ...)
 * manage billers
 
 * add schema validator for update user
