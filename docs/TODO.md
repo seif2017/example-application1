@@ -34,6 +34,8 @@
 * add helpers (database, build, ...)
 
 ## TODO:
+* add vue component ==> params
+
 * database crypt password (secret param persistent)
 * login return token (secret param persistent)
 * add bearer token
