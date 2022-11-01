@@ -12,12 +12,13 @@
             <div class="col-md-3">
                 <Dashboard :numberOfUsers="numberOfUsers" @getAllUsers="getAllUsers()" />
             </div>          
-            <div class="col-md-3">
-                <ParamsTable :params="params"/>
-            </div>
+        
 
           </div>
     </div>
+    <div class="row mrgnbtm">
+                <ParamsTable :params="params"/>
+            </div>
     <div class="row mrgnbtm">
         <UsersTable v-if="users.length > 0" :users="users" />
     </div>

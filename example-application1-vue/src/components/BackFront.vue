@@ -1,5 +1,5 @@
 <template>
-  <div class="display-board">
+  <div class="display-board box">
     <h4>Tests FRONT/BACK (refresh 5 sec)</h4>
     <div>
       Frontend ENV (VUE_APP_AAA) : {{ frontendEnv }} <br />

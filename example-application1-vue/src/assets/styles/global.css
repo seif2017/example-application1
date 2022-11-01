@@ -1,6 +1,6 @@
 .header {
     padding: 2%;
-    background-color:rgb(19, 179, 27);
+    background-color:rgb(68, 114, 214);
     font-size: 40px;
     text-align: center;
     width: 100%;
@@ -37,4 +37,8 @@ h1 {
 
 .mrgnbtm {
   margin-top: 20px;
+}
+
+.box{
+  background-color: rgba(234, 240, 240, 0.884);
 }
