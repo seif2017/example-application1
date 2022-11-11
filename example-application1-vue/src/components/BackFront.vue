@@ -1,5 +1,5 @@
 <template>
-  <div class="display-board">
+  <div class="display-board box">
     <h4>Tests FRONT/BACK (refresh 5 sec)</h4>
     <div>
       Frontend ENV (VUE_APP_AAA) : {{ frontendEnv }} <br />
@@ -31,10 +31,10 @@ export default {
   },
   created() {
     this.refresh();
-    this.timer = setInterval(this.refresh, 5000);
+    //this.timer = setInterval(this.refresh, 5000);
   },
   beforeDestroy() {
-    clearInterval(this.timer);
+    //clearInterval(this.timer);
   },
   methods: {
     async refresh() {

@@ -1,26 +1,6 @@
 version: '3'
 services:
 
-  mssql:
-    image: mcr.microsoft.com/mssql/server
-    hostname: mssql
-    container_name: mssql
-    restart: always
-    environment:
-      - ACCEPT_EULA=Y
-      - SA_PASSWORD=p@ssw0rd
-    volumes:
-      - ./mssql-data:/var/opt/mssql/data    
-    ports:
-      - "1433:1433"
-
-  adminer:
-    image: adminer
-    container_name: adminer
-    restart: always
-    ports:
-      - 6060:8080
-
   swagger-ui:
     hostname: swagger-ui
     container_name: swagger-ui

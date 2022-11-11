@@ -22,7 +22,7 @@
 * connectors logs
 * dynamic connectors list
 * connector params (mono, multi)
-* attach entities to connector
+* attach billers to connector
 * dynamic billers list
 * role management
 * persistent roles
@@ -30,14 +30,19 @@
 * add table relations
 * persitent params
 * parallel features (1/+ dev)
+* login
+* add helpers (database, build, ...)
 
 ## TODO:
+* add vue component ==> params
 
-* login
+* database crypt password (secret param persistent)
+* login return token (secret param persistent)
 * add bearer token
+* add change password + protect
 
 * manage roles
-* manage connectors (activate, deactivate, add entity, ...)
+* manage connectors (activate, deactivate, add biller, ...)
 * manage billers
 
 * add schema validator for update user
@@ -57,7 +62,6 @@
 * add postman testing
 * add test driven dev
 
-* add helpers (database, build, ...)
 * add NGINX
 * add certificate
 * remove frontend logs (production)

@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container box">
     <div class="row">
         <div class="col-md-8 mrgnbtm">
         <h2>Create User ..%%.</h2>
@@ -43,7 +43,8 @@ export default {
           const payload = {
               firstName: this.firstName,
               lastName: this.lastName,
-              email: this.email
+              email: this.email,
+              id:""
           }
           this.$emit('createUser', payload)
           this.clearForm();

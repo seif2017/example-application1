@@ -26,4 +26,9 @@ exports.getEnv = async () => {
   return env;
 };
 
-
+const serv = require('./param.services')
+exports.getParam = async () => {
+  const param = await serv.getParam('PARAM1');
+  logs("[INFO]", "Server param PARAM1:", param);
+  return param;
+};

@@ -4,6 +4,10 @@ module.exports = (sequelize, Sequelize) => {
     firstName: { type: Sequelize.STRING },
     lastName: { type: Sequelize.STRING },
     email: { type: Sequelize.STRING },
+    password : { type: Sequelize.STRING },
+    role : { type: Sequelize.STRING },
+    belongsTo : { type: Sequelize.STRING },
+    
     birthDate: {
       type: Sequelize.DATE,
       get() {

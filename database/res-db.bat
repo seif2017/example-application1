@@ -1,0 +1,1 @@
+docker run --network=host -v C:\we-settle-local\test\example-application1/database/bkp-db/db_test.sql:/script.sql --rm mcr.microsoft.com/mssql-tools /opt/mssql-tools/bin/sqlcmd -S 127.0.0.1 -U sa -P "p@ssw0rd" -i /script.sql 
