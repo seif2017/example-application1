@@ -2,9 +2,14 @@
 * git pull
 * git checkout develop
 * git flow feature start 'feat name'
-* ... develop & git commit ... git push
-* ... develop & git commit ... git push
-* git flow feature publish
+* ... develop & test ... git commit & git push
+* ... develop & test ... git commit & git push
+* git flow feature rebase
+* ... resolve conflicts & retest ... git commit & git push
+* ... develop & test ... git commit & git push
+* git flow feature rebase
+* ... resolve conflicts & retest ... git commit & git push
+* git flow feature publish 
 
 ## VALIDATE FEATURE (tech leader):
 * git pull
