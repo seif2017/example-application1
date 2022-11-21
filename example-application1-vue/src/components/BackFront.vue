@@ -3,7 +3,7 @@
     <h4>Tests FRONT/BACK (refresh 5 sec)</h4>
     <div>
       Frontend ENV (VUE_APP_AAA) : {{ frontendEnv }} <br />
-      Backend ENV (XXX) : {{ backendEnv }} <br />
+      Backend ENV (tttttXXX) : {{ backendEnv }} <br />
       <br />
       Frontend time : {{ fronendDate }} <br />
       Backend time : {{ backendDate }}<br />
@@ -30,8 +30,9 @@ export default {
     };
   },
   created() {
+    
     this.refresh();
-    //this.timer = setInterval(this.refresh, 5000);
+    // this.timer = setInterval(this.refresh, 5000);
   },
   beforeDestroy() {
     //clearInterval(this.timer);
